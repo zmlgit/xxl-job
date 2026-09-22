@@ -76,6 +76,13 @@
 			<version>${polardbx-connector-java.version}</version>
 		</dependency>
 
+		<!-- Dameng JDBC driver (profile: dameng) -->
+		<dependency>
+			<groupId>com.dameng</groupId>
+			<artifactId>DmJdbcDriver18</artifactId>
+			<version>${dm-jdbc.version}</version>
+		</dependency>
+
 		<!-- xxl-job-core -->
 		<dependency>
 			<groupId>com.xuxueli</groupId>
