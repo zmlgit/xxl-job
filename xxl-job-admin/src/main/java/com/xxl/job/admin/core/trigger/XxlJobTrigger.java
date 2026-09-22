@@ -59,6 +59,10 @@ public class XxlJobTrigger {
         }
         int finalFailRetryCount = failRetryCount>=0?failRetryCount:jobInfo.getExecutorFailRetryCount();
         XxlJobGroup group = XxlJobAdminConfig.getAdminConfig().getXxlJobGroupDao().load(jobInfo.getJobGroup());
+        if (group == null) {
+            logger.warn(">>>>>>>>>>> xxl-job trigger fail, jobGroup not found. jobId:{}", jobInfo.getId());
+            return;
+        }
 
         // cover addressList
         if (addressList!=null && addressList.trim().length()>0) {
